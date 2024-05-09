@@ -1,0 +1,61 @@
+MainScreenManager:
+	HomeScreen:
+	NoteScreen:
+	ExploreScreen:
+
+<HomeScreen>:
+	name: 'home'
+	Label:
+		text: 'home screen'
+<NoteScreen>:
+	name: 'note'
+	Label:
+		text: 'note screen'
+<ExploreScreen>:
+	name: 'explore'
+	Label:
+		text: 'explore screen'
+
+<MainScreen>:
+	orientation: 'vertical'
+	
+	BoxLayout:
+		orientation: 'horizontal'
+		size_hint_y: 1
+		size_hint_min_y: root.height * 0.1
+		Label:
+			text: 'Welcome~'
+		TextInput:
+			id: search
+			hint_text: 'Search'
+	ScreenManager:
+		id: lessons_lst
+		size_hint_y: 8
+		size_hint_min_y: root.height * 0.8
+
+		HomeScreen:
+			name: 'home'
+		NoteScreen:
+			name: 'note'
+		ExploreScreen:
+			name: 'explore'
+		
+
+	BoxLayout:
+		orientation: 'horizontal'
+		size_hint_y: 1
+		size_hint_min_y: root.height * 0.1
+
+		Button:
+			id: 'note'
+			text: 'note'
+			on_release: app.go_to_screen(name='note')
+		Button:
+			id: 'home'
+			text: 'home'
+			on_release: app.go_to_screen(name='home')
+
+		Button:
+			id: 'explore'
+			text: 'explore'
+			on_release: app.go_to_screen(name='explore')

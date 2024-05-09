@@ -1,0 +1,20 @@
+import unittest
+from app import Lesson
+
+class TestLessonClass(unittest.TestCase):
+    def test_class(self):
+        titles = ['title'+str(i) for i in range(3)]
+        teachers = ['teacher'+str(i) for i in range(3)]
+        contents = ['content'+str(i) for i in range(3)]
+
+        lessons = []
+        for i in range(3):
+            l = Lesson(titles[i], teachers[i], contents[i])
+            lessons.append(l)
+
+        self.assertEqual(lessons[0].title, 'title0')
+        self.assertEqual(lessons[0].teacher, 'teacher0')
+        self.assertEqual(lessons[0].content, 'content0')
+
+if __name__ == '__main__':
+    unittest.main()

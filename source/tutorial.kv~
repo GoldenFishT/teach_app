@@ -1,0 +1,46 @@
+#:import random random
+
+<ScatterTextWidget>:
+	orientation: 'vertical'
+	TextInput:
+		id: my_textinput
+		font_size: 100
+		size_hint_y: None
+		height: 200
+		text: 'default'
+		on_text: root.change_label_color()
+
+	FloatLayout:
+		Scatter:
+			canvas.after:
+				Color:
+					rgba: 1, 0, 0, 0.5
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			Label:
+				id: my_label
+				text: my_textinput.text + str(my_textinput.height)
+				font_size: 150
+				color: root.text_color
+				size: self.texture_size
+				canvas:
+					Color:
+						rgba: 0, 1, 0, 0.3
+					Rectangle:
+						pos: self.pos
+						size: self.size
+	BoxLayout:
+		orientation: 'horizontal'
+		size_hint_y: None
+		height: 150
+		Label:
+			id: label1
+			text: my_textinput.text[:3][::-1]
+			font_size: 100
+			color: root.text_color
+		Label:
+			id: label2
+			text: str(root.text_color[0])
+			font_size: 100
+			color: root.text_color

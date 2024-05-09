@@ -1,0 +1,35 @@
+<MainScreen>:
+    orientation: 'vertical'
+    BoxLayout:
+	id: head
+	size_hint_y: 1
+	size_hint_min_y: root.height * 0.1
+	Label:
+	    text: 'welcome!'
+	TextInput:
+	    id: search_input
+	    hint_text: 'Search'
+	 
+    BoxLayout:
+	id: lessons_list
+	size_hint_y: 8
+	size_hint_min_y: root.height * 0.8
+	Label:
+	    text: 'Lessons'
+
+    BoxLayout:
+	orientation: 'horizontal'
+	size_hint_y: 1
+	size_hint_min_y: root.height * 0.1
+
+	Button:
+	    text: 'notes'
+	    font_size: 100
+	 
+	Button:
+	    text: 'home'
+	    font_size: 100
+
+	Button:
+	    text: 'explore'
+	    font_size: 100
